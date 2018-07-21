@@ -62,7 +62,7 @@
 <div class="main">
 	<section id="table" class="">
 		<div class="container">
-			<h1 class="text-center" style="margin-bottom:100px;">Don't be a B1tch, mine with CryptoPools.info</h1>
+			<h1 class="text-center" style="margin-bottom:100px;">More on the way soon</h1>
 			<p class="alert alert-info">
 				<span class="pe-7s-volume" style="padding:0 15px 0 0; font-size:130%;"></span><strong>Need more hash?</strong> Rent a Rig from <a href="https://www.miningrigrentals.com/register?ref=46728">Mining Rig Rentals</a>  |  Set your pool to <code>pirl.cryptopools.info:8002</code>
 			</p>

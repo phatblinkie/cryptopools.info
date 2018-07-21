@@ -140,7 +140,7 @@ function get_btc_usd($json_url, $json_element)
 
 $pirlcontent ="
 <tr>
-  <td class=\"text-center\"><img height=\"40px\" src=\"https://cryptopools.info/image/pirl_logo.png\" /></td>
+  <td class=\"text-center\"><img height=\"40px\" src=\"https://cryptopools.info/images/pirl_logo.png\" /></td>
   <td>Pirl</td>
   <td>".human_filesize($pirlresults['hashrate'])."</td>
   <td>".$pirlresults['minersTotal']."</td>
@@ -154,7 +154,7 @@ $pirlcontent ="
 
 $akromacontent ="
 <tr>
-  <td class=\"text-center\"><img height=\"40px\" src=\"https://cryptopools.info/image/akroma_logo.png\" /></td>
+  <td class=\"text-center\"><img height=\"40px\" src=\"https://cryptopools.info/images/akroma_logo.png\" /></td>
   <td>Akroma</td>
   <td>".human_filesize($akromaresults['hashrate'])."</td>
   <td>".$akromaresults['minersTotal']."</td>
@@ -169,7 +169,7 @@ $akromacontent ="
 
 $atheioscontent ="
 <tr>
-  <td class=\"text-center\"><img height=\"40px\" src=\"https://cryptopools.info/image/atheios_logo.png\" /></td>
+  <td class=\"text-center\"><img height=\"40px\" src=\"https://cryptopools.info/images/atheios_logo.png\" /></td>
   <td>Atheios</td>
   <td>".human_filesize($atheiosresults['hashrate'])."</td>
   <td>".$atheiosresults['minersTotal']."</td>
@@ -183,7 +183,7 @@ $atheioscontent ="
 
 $moaccontent ="
 <tr>
-  <td class=\"text-center\"><img height=\"40px\" src=\"https://cryptopools.info/image/MOAC_logo.png\" /></td>
+  <td class=\"text-center\"><img height=\"40px\" src=\"https://cryptopools.info/images/MOAC_logo.png\" /></td>
   <td>MOAC</td>
   <td>".human_filesize($moacresults['hashrate'])."</td>
   <td>".$moacresults['minersTotal']."</td>
@@ -201,9 +201,11 @@ $content .= "$akromacontent";
 $content .= "$atheioscontent";
 $content .= "$moaccontent";
 
+if ($debug != "0") {
 echo $content;
+}
 
-$filename="/home/mohannad/cryptopools.info/stats.php";
+$filename="stats.php";
 $file = fopen("$filename","w");
 $charnum = fwrite($file, "$content");
 fclose($file);
