@@ -205,7 +205,7 @@ if ($debug != "0") {
 echo $content;
 }
 
-$filename="stats.php";
+$filename="/home/mohannad/cryptopools.info/stats.php";
 $file = fopen("$filename","w");
 $charnum = fwrite($file, "$content");
 fclose($file);
