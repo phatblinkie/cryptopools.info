@@ -27,7 +27,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand navbar-brand-logo" href="http://www.creative-tim.com">
+              <a class="navbar-brand navbar-brand-logo" href="https://cryptopools.info">
 
                     <div class="brand"> CryptoPools.info </div>
               </a>
@@ -62,11 +62,11 @@
 <div class="main">
 	<section id="table" class="">
 		<div class="container">
-			<h1 class="text-center" style="margin-bottom:100px;">a Crypto Pool From miners, to miners..</h1>
+			<h1 class="text-center" style="margin-bottom:100px;">Don't be a B1tch, mine with CryptoPools.info</h1>
 			<p class="alert alert-info">
 				<span class="pe-7s-volume" style="padding:0 15px 0 0; font-size:130%;"></span><strong>Need more hash?</strong> Rent a Rig from <a href="https://www.miningrigrentals.com/register?ref=46728">Mining Rig Rentals</a>  |  Set your pool to <code>pirl.cryptopools.info:8002</code>
 			</p>
-			<h2 class="text-center" style="margin-top:50px;">Coin stats</h2>
+			<h2 class="text-center" style="margin-top:50px;"><small>Coin data: @ <?php echo date("F d Y H:i:s",filemtime("stats.php")); ?></small></h2>
       <div class="fresh-table full-color-blue">
         <table id="fresh-table" class="table">
             <thead>
@@ -75,58 +75,13 @@
             	<th data-field="speed" data-sortable="true">Speed</th>
             	<th data-field="miners" data-sortable="true">Miners</th>
             	<th data-field="blocks" data-sortable="true">Blocks</th>
-							<th data-field="usd" data-sortable="true">USD</th>
-							<th data-field="btc" data-sortable="true">BTC</th>
-            	<th data-field="mineNow"></th>
+		<th data-field="usd" data-sortable="true">USD</th>
+		<th data-field="btc" data-sortable="true">BTC</th>
+		<th data-field="change" data-sortable="true">%change</th>
+            	<th data-field="mineNow" data-sortable="false"> </th>
             </thead>
             <tbody>
-                <tr>
-									<td class="text-center"><img height="40px" src="https://www.coincalculators.io/images/coin/ATH.png" /></td>
-                	<td>Atheios</td>
-                	<td>25 GHs</td>
-                	<td>21</td>
-                	<td>15</td>
-                	<td>0.3</td>
-                	<td>0.00042</td>
-									<td class="text-center"><a href="#" class="btn btn-success">Mine Now</a></td>
-                </tr>
-
-								<tr>
-									<td class="text-center"><img height="40px" src="https://s2.coinmarketcap.com/static/img/coins/32x32/2757.png" /></td>
-                	<td>Callisto</td>
-                	<td>25 GHs</td>
-                	<td>21</td>
-                	<td>15</td>
-                	<td>0.3</td>
-                	<td>0.00042</td>
-									<td class="text-center"><a href="#" class="btn btn-success">Mine Now</a></td>
-
-                </tr>
-
-								<tr>
-									<td class="text-center"><img height="40px" src="https://s2.coinmarketcap.com/static/img/coins/32x32/2105.png" /></td>
-                	<td>Pirl</td>
-                	<td>25 GHs</td>
-                	<td>21</td>
-                	<td>15</td>
-                	<td>0.3</td>
-                	<td>0.00042</td>
-									<td class="text-center"><a href="#" class="btn btn-success">Mine Now</a></td>
-
-                </tr>
-
-								<tr>
-									<td class="text-center"><img height="40px" src="https://www.coincalculators.io/images/coin/AKA.png" /></td>
-                	<td>Akroma</td>
-                	<td>25 GHs</td>
-                	<td>21</td>
-                	<td>15</td>
-                	<td>0.3</td>
-                	<td>0.00042</td>
-									<td class="text-center"><a href="#" class="btn btn-success">Mine Now</a></td>
-
-                </tr>
-
+<?php include("stats.php"); ?>
             </tbody>
         </table>
     </div>
@@ -138,11 +93,12 @@
 				About us
 				<br />
 				<small>
-					We provide the most stable and profitable mining pools available. Quality bandwidth and hardware make CryptoPools a leading choice amongst other mining pools.
+			We provide extremely stable, safe and profitable mining pools for ETHASH coins that interest us. 
+	Quality bandwidth and hardware, and updated pool software and payout schemas make CryptoPools a leading choice amongst other mining pools.
 				</small>
 			</h2>
 			<div class="text-center">
-				<a style="margin-top:20px;padding:10px 30px; font-size:22px;" class="btn btn-success" href="https://discord.gg/Rdrz7Mm">Questions? Join us on Discord!</a>
+				<a style="margin-top:20px;padding:10px 30px; font-size:22px;" class="btn btn-success" href="https://discord.gg/cNfvhAy">Questions? Join us on Discord!</a>
 
 			</div>
 		</div>
@@ -185,8 +141,7 @@
 		<div class="container">
 			<nav>
 					<ul>
-							<li><a href="https://www.creative-tim.com">Email</a></li>
-							<li><a href="http://presentation.creative-tim.com">Discord</a></li>
+							<li><a href="https://discord.gg/cNfvhAy">Discord</a></li>
 
 					</ul>
 			</nav>
