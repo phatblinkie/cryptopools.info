@@ -28,6 +28,15 @@ if ($debug != "0") {
         print_r($akromaresults);
 }
 
+/////////////roller////////////////////////
+$url="http://roller.cryptopools.info/api/stats";
+$contents = file_get_contents($url);
+$rollerresults = json_decode($contents, true);
+if ($debug != "0") {
+        print_r($rollerresults);
+}
+
+
 ///////////////atheios///////////////////////
 $url="http://atheios.cryptopools.info/api/stats";
 $contents = file_get_contents($url);
@@ -65,6 +74,12 @@ if ($debug != "0") {
 }
 
 
+$url="https://www.coincalculators.io/api.aspx?name=roller&hashrate=40000000";
+$contents = file_get_contents($url);
+$rollercmc = json_decode($contents, true);
+if ($debug != "0") {
+        print_r($rollercmc);
+}
 
 
 
@@ -87,6 +102,9 @@ $atheios_price_usd=number_format($atheioscmc['price_usd'], 6);
 $atheios_price_btc=number_format($atheioscmc['price_btc'], 8);
 $atheios_price_change=number_format($atheioscmc['percentChange_24h'], 3);
 
+$roller_price_usd=number_format($rollercmc['price_usd'], 6);
+$roller_price_btc=number_format($rollercmc['price_btc'], 8);
+$roller_price_change=number_format($rollercmc['percentChange_24h'], 3);
 
 function human_filesize($bytes, $decimals = 2) {
     $size = array('B','kB','MB','GB','TB','PB','EB','ZB','YB');
@@ -195,11 +213,26 @@ $moaccontent ="
 </tr>
 ";
 
+$rollercontent ="
+<tr>
+  <td class=\"text-center\"><img height=\"40px\" src=\"https://cryptopools.info/images/roller_logo.png\" /></td>
+  <td>ROLLER</td>
+  <td>".human_filesize($rollerresults['hashrate'])."</td>
+  <td>".$rollerresults['minersTotal']."</td>
+  <td>".$rollerresults['immatureTotal']."</td>
+  <td>".$roller_price_usd."</td>
+  <td>".$roller_price_btc."</td>
+  <td>".$roller_price_change."</td>
+  <td class=\"text-center\"><a href=\"https://roller.cryptopools.info\" class=\"btn btn-success\">Mine Now</a></td>
+</tr>
+";
+
 
 $content = "$pirlcontent";
 $content .= "$akromacontent";
 $content .= "$atheioscontent";
 $content .= "$moaccontent";
+$content .= "$rollercontent";
 
 if ($debug != "0") {
 echo $content;

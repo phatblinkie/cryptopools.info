@@ -10,6 +10,9 @@
 	<link href="css/style.css" rel="stylesheet" />
 </head>
 <body>
+<?php 
+//phpinfo(); 
+?>
 <div class="img-src darker blur-me" style="background-image: url('images/bitcoin-mining.jpg')"></div>
  <div id="navbar-full" >
     <div id="navbar">
@@ -104,7 +107,8 @@
 		</div>
 	</section>
 <?php
-	if (isset($_POST["submit"])) {
+error_reporting(0);
+	if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
 		$name = $_POST['name'];
 		$email = $_POST['email'];
 		$message = $_POST['message'];
@@ -136,9 +140,12 @@
  
 // If there are no errors, send the email
 if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
-	if (mail ($to, $subject, $body, $from)) {
+
+	if (mail ($to, $subject, $body)) {
 		$result='<div class="alert alert-success">Thank You! I will be in touch</div>';
 	} else {
+//$errorMessage = error_get_last()['message'];
+//print_r($errorMessage);
 		$result='<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later</div>';
 	}
 }
@@ -162,15 +169,15 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
 
 						<form role="form" id="contact-form" method="post">
 						  <div class="form-group">
-						      <input type="text" class="form-control" id="name" placeholder="Your name" value="<?php echo htmlspecialchars($_POST['name']); ?>">
+						      <input type="text" class="form-control" id="name" name="name" placeholder="Your name" value="<?php echo htmlspecialchars($_POST['name']); ?>">
 						<?php echo "<p class='text-danger'>$errName</p>";?>
 						  </div>
 						  <div class="form-group">
-						      <input type="email" class="form-control" id="email" placeholder="Email address" value="<?php echo htmlspecialchars($_POST['email']); ?>">
+						      <input type="email" class="form-control" id="email" name="email" placeholder="Email address" value="<?php echo htmlspecialchars($_POST['email']); ?>">
 						<?php echo "<p class='text-danger'>$errEmail</p>";?>
 						  </div>
 						  <div class="form-group">
-						  <textarea class="form-control" rows="6" id="message" placeholder="Your message"><?php echo htmlspecialchars($_POST['message']);?></textarea>
+						  <textarea class="form-control" rows="6" id="message" name="message" placeholder="Your message"><?php echo htmlspecialchars($_POST['message']);?></textarea>
 							<?php echo "<p class='text-danger'>$errMessage</p>";?>
 						  </div>
 						<div class="form-group">
