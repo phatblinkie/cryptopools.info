@@ -29,21 +29,21 @@ if ($debug != "0") {
 }
 
 /////////////roller////////////////////////
-$url="http://roller.cryptopools.info/api/stats";
-$contents = file_get_contents($url);
-$rollerresults = json_decode($contents, true);
-if ($debug != "0") {
-        print_r($rollerresults);
-}
+//$url="http://roller.cryptopools.info/api/stats";
+//$contents = file_get_contents($url);
+//$rollerresults = json_decode($contents, true);
+//if ($debug != "0") {
+//        print_r($rollerresults);
+//}
 
 
 ///////////////atheios///////////////////////
-$url="http://atheios.cryptopools.info/api/stats";
-$contents = file_get_contents($url);
-$atheiosresults = json_decode($contents, true);
-if ($debug != "0") {
-        print_r($atheiosresults);
-}
+//$url="http://atheios.cryptopools.info/api/stats";
+//$contents = file_get_contents($url);
+//$atheiosresults = json_decode($contents, true);
+//if ($debug != "0") {
+//        print_r($atheiosresults);
+//}
 
 $url="https://www.coincalculators.io/api.aspx?name=pirl&hashrate=40000000";
 $contents = file_get_contents($url);
@@ -66,20 +66,20 @@ if ($debug != "0") {
         print_r($moaccmc);
 }
 
-$url="https://www.coincalculators.io/api.aspx?name=atheios&hashrate=40000000";
-$contents = file_get_contents($url);
-$atheioscmc = json_decode($contents, true);
-if ($debug != "0") {
-        print_r($atheioscmc);
-}
+//$url="https://www.coincalculators.io/api.aspx?name=atheios&hashrate=40000000";
+//$contents = file_get_contents($url);
+//$atheioscmc = json_decode($contents, true);
+//if ($debug != "0") {
+//        print_r($atheioscmc);
+//}
 
 
-$url="https://www.coincalculators.io/api.aspx?name=roller&hashrate=40000000";
-$contents = file_get_contents($url);
-$rollercmc = json_decode($contents, true);
-if ($debug != "0") {
-        print_r($rollercmc);
-}
+//$url="https://www.coincalculators.io/api.aspx?name=roller&hashrate=40000000";
+//$contents = file_get_contents($url);
+//$rollercmc = json_decode($contents, true);
+//if ($debug != "0") {
+//        print_r($rollercmc);
+//}
 
 
 
@@ -98,16 +98,16 @@ $pirl_price_btc=number_format($pirlcmc['price_btc'], 8);
 $pirl_price_change=number_format($pirlcmc['percentChange_24h'], 3);
 
 
-$atheios_price_usd=number_format($atheioscmc['price_usd'], 6);
-$atheios_price_btc=number_format($atheioscmc['price_btc'], 8);
-$atheios_price_change=number_format($atheioscmc['percentChange_24h'], 3);
+//$atheios_price_usd=number_format($atheioscmc['price_usd'], 6);
+//$atheios_price_btc=number_format($atheioscmc['price_btc'], 8);
+//$atheios_price_change=number_format($atheioscmc['percentChange_24h'], 3);
 
-$roller_price_usd=number_format($rollercmc['price_usd'], 6);
-$roller_price_btc=number_format($rollercmc['price_btc'], 8);
-$roller_price_change=number_format($rollercmc['percentChange_24h'], 3);
+//$roller_price_usd=number_format($rollercmc['price_usd'], 6);
+//$roller_price_btc=number_format($rollercmc['price_btc'], 8);
+//$roller_price_change=number_format($rollercmc['percentChange_24h'], 3);
 
 function human_filesize($bytes, $decimals = 2) {
-    $size = array('B','kB','MB','GB','TB','PB','EB','ZB','YB');
+    $size = array('H','kH','MH','GH','TH','PH','EH','ZH','YH');
     $factor = floor((strlen($bytes) - 1) / 3);
     return sprintf("%.{$decimals}f", $bytes / pow(1024, $factor)) . @$size[$factor];
 }
@@ -158,7 +158,7 @@ function get_btc_usd($json_url, $json_element)
 
 $pirlcontent ="
 <tr>
-  <td class=\"text-center\"><img height=\"40px\" src=\"https://cryptopools.info/images/pirl_logo.png\" /></td>
+  <td class=\"text-center\"><img height=\"40px\" src=\"/images/pirl_logo.png\" /></td>
   <td>Pirl</td>
   <td>".human_filesize($pirlresults['hashrate'])."</td>
   <td>".$pirlresults['minersTotal']."</td>
@@ -172,7 +172,7 @@ $pirlcontent ="
 
 $akromacontent ="
 <tr>
-  <td class=\"text-center\"><img height=\"40px\" src=\"https://cryptopools.info/images/akroma_logo.png\" /></td>
+  <td class=\"text-center\"><img height=\"40px\" src=\"/images/akroma_logo.png\" /></td>
   <td>Akroma</td>
   <td>".human_filesize($akromaresults['hashrate'])."</td>
   <td>".$akromaresults['minersTotal']."</td>
@@ -185,23 +185,23 @@ $akromacontent ="
 ";
 
 
-$atheioscontent ="
-<tr>
-  <td class=\"text-center\"><img height=\"40px\" src=\"https://cryptopools.info/images/atheios_logo.png\" /></td>
-  <td>Atheios</td>
-  <td>".human_filesize($atheiosresults['hashrate'])."</td>
-  <td>".$atheiosresults['minersTotal']."</td>
-  <td>".$atheiosresults['immatureTotal']."</td>
-  <td>".$atheios_price_usd."</td>
-  <td>".$atheios_price_btc."</td>
-  <td>".$atheios_price_change."</td>
-  <td class=\"text-center\"><a href=\"https://Atheios.cryptopools.info\" class=\"btn btn-success\">Mine Now</a></td>
-</tr>
-";
+//$atheioscontent ="
+//<tr>
+//  <td class=\"text-center\"><img height=\"40px\" src=\"https://cryptopools.info/images/atheios_logo.png\" /></td>
+//  <td>Atheios</td>
+//  <td>".human_filesize($atheiosresults['hashrate'])."</td>
+//  <td>".$atheiosresults['minersTotal']."</td>
+//  <td>".$atheiosresults['immatureTotal']."</td>
+//  <td>".$atheios_price_usd."</td>
+//  <td>".$atheios_price_btc."</td>
+//  <td>".$atheios_price_change."</td>
+//  <td class=\"text-center\"><a href=\"https://Atheios.cryptopools.info\" class=\"btn btn-success\">Mine Now</a></td>
+//</tr>
+//";
 
 $moaccontent ="
 <tr>
-  <td class=\"text-center\"><img height=\"40px\" src=\"https://cryptopools.info/images/MOAC_logo.png\" /></td>
+  <td class=\"text-center\"><img height=\"40px\" src=\"/images/MOAC_logo.png\" /></td>
   <td>MOAC</td>
   <td>".human_filesize($moacresults['hashrate'])."</td>
   <td>".$moacresults['minersTotal']."</td>
@@ -213,26 +213,26 @@ $moaccontent ="
 </tr>
 ";
 
-$rollercontent ="
-<tr>
-  <td class=\"text-center\"><img height=\"40px\" src=\"https://cryptopools.info/images/roller_logo.png\" /></td>
-  <td>ROLLER</td>
-  <td>".human_filesize($rollerresults['hashrate'])."</td>
-  <td>".$rollerresults['minersTotal']."</td>
-  <td>".$rollerresults['immatureTotal']."</td>
-  <td>".$roller_price_usd."</td>
-  <td>".$roller_price_btc."</td>
-  <td>".$roller_price_change."</td>
-  <td class=\"text-center\"><a href=\"https://roller.cryptopools.info\" class=\"btn btn-success\">Mine Now</a></td>
-</tr>
-";
+//$rollercontent ="
+//<tr>
+//  <td class=\"text-center\"><img height=\"40px\" src=\"/images/roller_logo.png\" /></td>
+//  <td>ROLLER</td>
+//  <td>".human_filesize($rollerresults['hashrate'])."</td>
+//  <td>".$rollerresults['minersTotal']."</td>
+//  <td>".$rollerresults['immatureTotal']."</td>
+//  <td>".$roller_price_usd."</td>
+//  <td>".$roller_price_btc."</td>
+//  <td>".$roller_price_change."</td>
+//  <td class=\"text-center\"><a href=\"https://roller.cryptopools.info\" class=\"btn btn-success\">Mine Now</a></td>
+//</tr>
+//";
 
 
 $content = "$pirlcontent";
 $content .= "$akromacontent";
-$content .= "$atheioscontent";
+//$content .= "$atheioscontent";
 $content .= "$moaccontent";
-$content .= "$rollercontent";
+//$content .= "$rollercontent";
 
 if ($debug != "0") {
 echo $content;
