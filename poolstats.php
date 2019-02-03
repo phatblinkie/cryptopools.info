@@ -11,22 +11,22 @@ if ($debug != "0") {
  }
 
 ///////////////moac//////////////////////////
-$url="http://moac.cryptopools.info/api/stats";
-$contents = file_get_contents($url);
-$moacresults = json_decode($contents, true);
-if ($debug != "0") {
-        print_r($moacresults);
-}
+//$url="http://moac.cryptopools.info/api/stats";
+//$contents = file_get_contents($url);
+//$moacresults = json_decode($contents, true);
+//if ($debug != "0") {
+//        print_r($moacresults);
+//}
 
 
 
 /////////////akroma////////////////////////
-$url="http://akroma.cryptopools.info/api/stats";
-$contents = file_get_contents($url);
-$akromaresults = json_decode($contents, true);
-if ($debug != "0") {
-        print_r($akromaresults);
-}
+//$url="http://akroma.cryptopools.info/api/stats";
+//$contents = file_get_contents($url);
+//$akromaresults = json_decode($contents, true);
+//if ($debug != "0") {
+//        print_r($akromaresults);
+//}
 
 /////////////roller////////////////////////
 //$url="http://roller.cryptopools.info/api/stats";
@@ -52,19 +52,19 @@ if ($debug != "0") {
         print_r($pirlcmc);
 }
 
-$url="https://www.coincalculators.io/api.aspx?name=akroma&hashrate=40000000";
-$contents = file_get_contents($url);
-$akromacmc = json_decode($contents, true);
-if ($debug != "0") {
-        print_r($akromacmc);
-}
+//$url="https://www.coincalculators.io/api.aspx?name=akroma&hashrate=40000000";
+//$contents = file_get_contents($url);
+//$akromacmc = json_decode($contents, true);
+//if ($debug != "0") {
+//        print_r($akromacmc);
+//}
 
-$url="https://www.coincalculators.io/api.aspx?name=moac&hashrate=40000000";
-$contents = file_get_contents($url);
-$moaccmc = json_decode($contents, true);
-if ($debug != "0") {
-        print_r($moaccmc);
-}
+//$url="https://www.coincalculators.io/api.aspx?name=moac&hashrate=40000000";
+//$contents = file_get_contents($url);
+//$moaccmc = json_decode($contents, true);
+//if ($debug != "0") {
+//        print_r($moaccmc);
+//}
 
 //$url="https://www.coincalculators.io/api.aspx?name=atheios&hashrate=40000000";
 //$contents = file_get_contents($url);
@@ -85,13 +85,13 @@ if ($debug != "0") {
 
 //print_r($calccmc);
 
-$akroma_price_usd=number_format($akromacmc['price_usd'], 6);
-$akroma_price_btc=number_format($akromacmc['price_btc'], 8);
-$akroma_price_change=number_format($akromacmc['percentChange_24h'], 3);
+//$akroma_price_usd=number_format($akromacmc['price_usd'], 6);
+//$akroma_price_btc=number_format($akromacmc['price_btc'], 8);
+//$akroma_price_change=number_format($akromacmc['percentChange_24h'], 3);
 
-$moac_price_usd=number_format($moaccmc['price_usd'], 6);
-$moac_price_btc=number_format($moaccmc['price_btc'], 8);
-$moac_price_change=number_format($moaccmc['percentChange_24h'], 3);
+//$moac_price_usd=number_format($moaccmc['price_usd'], 6);
+//$moac_price_btc=number_format($moaccmc['price_btc'], 8);
+//$moac_price_change=number_format($moaccmc['percentChange_24h'], 3);
 
 $pirl_price_usd=number_format($pirlcmc['price_usd'], 6);
 $pirl_price_btc=number_format($pirlcmc['price_btc'], 8);
@@ -170,19 +170,19 @@ $pirlcontent ="
 </tr>
 ";
 
-$akromacontent ="
-<tr>
-  <td class=\"text-center\"><img height=\"40px\" src=\"/images/akroma_logo.png\" /></td>
-  <td>Akroma</td>
-  <td>".human_filesize($akromaresults['hashrate'])."</td>
-  <td>".$akromaresults['minersTotal']."</td>
-  <td>".$akromaresults['immatureTotal']."</td>
-  <td>".$akroma_price_usd."</td>
-  <td>".$akroma_price_btc."</td>
-  <td>".$akroma_price_change."</td>
-  <td class=\"text-center\"><a href=\"https://akroma.cryptopools.info\" class=\"btn btn-success\">Mine Now</a></td>
-</tr>
-";
+//$akromacontent ="
+//<tr>
+//  <td class=\"text-center\"><img height=\"40px\" src=\"/images/akroma_logo.png\" /></td>
+//  <td>Akroma</td>
+//  <td>".human_filesize($akromaresults['hashrate'])."</td>
+//  <td>".$akromaresults['minersTotal']."</td>
+//  <td>".$akromaresults['immatureTotal']."</td>
+//  <td>".$akroma_price_usd."</td>
+//  <td>".$akroma_price_btc."</td>
+//  <td>".$akroma_price_change."</td>
+//  <td class=\"text-center\"><a href=\"https://akroma.cryptopools.info\" class=\"btn btn-success\">Mine Now</a></td>
+//</tr>
+//";
 
 
 //$atheioscontent ="
@@ -199,19 +199,19 @@ $akromacontent ="
 //</tr>
 //";
 
-$moaccontent ="
-<tr>
-  <td class=\"text-center\"><img height=\"40px\" src=\"/images/MOAC_logo.png\" /></td>
-  <td>MOAC</td>
-  <td>".human_filesize($moacresults['hashrate'])."</td>
-  <td>".$moacresults['minersTotal']."</td>
-  <td>".$moacresults['immatureTotal']."</td>
-  <td>".$moac_price_usd."</td>
-  <td>".$moac_price_btc."</td>
-  <td>".$moac_price_change."</td>
-  <td class=\"text-center\"><a href=\"https://MOAC.cryptopools.info\" class=\"btn btn-success\">Mine Now</a></td>
-</tr>
-";
+//$moaccontent ="
+//<tr>
+//  <td class=\"text-center\"><img height=\"40px\" src=\"/images/MOAC_logo.png\" /></td>
+//  <td>MOAC</td>
+//  <td>".human_filesize($moacresults['hashrate'])."</td>
+//  <td>".$moacresults['minersTotal']."</td>
+//  <td>".$moacresults['immatureTotal']."</td>
+//  <td>".$moac_price_usd."</td>
+//  <td>".$moac_price_btc."</td>
+//  <td>".$moac_price_change."</td>
+//  <td class=\"text-center\"><a href=\"https://MOAC.cryptopools.info\" class=\"btn btn-success\">Mine Now</a></td>
+//</tr>
+//";
 
 //$rollercontent ="
 //<tr>
@@ -229,9 +229,9 @@ $moaccontent ="
 
 
 $content = "$pirlcontent";
-$content .= "$akromacontent";
+//$content .= "$akromacontent";
 //$content .= "$atheioscontent";
-$content .= "$moaccontent";
+//$content .= "$moaccontent";
 //$content .= "$rollercontent";
 
 if ($debug != "0") {
