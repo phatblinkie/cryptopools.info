@@ -238,7 +238,7 @@ if ($debug != "0") {
 echo $content;
 }
 
-$filename="/home/mohannad/cryptopools.info/stats.php";
+$filename="/home/brian/cryptopools.info/stats.php";
 $file = fopen("$filename","w");
 $charnum = fwrite($file, "$content");
 fclose($file);
